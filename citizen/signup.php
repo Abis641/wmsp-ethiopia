@@ -37,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username'], $_POST['pa
     $username = trim($_POST['username']);
     $email = $_POST['email'];
     $address = $_POST['Address'];
+    $phone = $_POST['phone'];  // Add phone field
     $password = $_POST['password'];
     
     if (strlen($password) < 8 || strlen($password) > 12) {
@@ -45,16 +46,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username'], $_POST['pa
     }
     
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    
     // Global username check
     if (isUsernameTaken($conn, $username)) {
         echo "<script>alert('Username already exists across the system. Please choose another one.'); window.location.href='login.html';</script>";
         exit();
     }
 
-    // Proceed with signup
-    $sql = "INSERT INTO users (first_name, last_name, username,email, address,  password) VALUES (?, ?, ?, ?, ?, ?)";
+    // Proceed with signup and include phone number
+    $sql = "INSERT INTO users (first_name, last_name, username, email, address, phone, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssss", $firstname, $lastname, $username,  $email, $address, $hashedPassword);
+    $stmt->bind_param("sssssss", $firstname, $lastname, $username, $email, $address, $phone, $hashedPassword);
 
     if ($stmt->execute()) {
         echo "<script>alert('Signup successful!'); window.location.href='login.html';</script>";

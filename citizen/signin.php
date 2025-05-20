@@ -34,6 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && !isset(
             $_SESSION['user'] = $user['username'];
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
+            $_SESSION['phone'] = $row['phone'];
+            $_SESSION['username'] = $username; 
+
             header("Location: user.php");
             exit();
         } else {

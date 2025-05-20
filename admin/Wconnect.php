@@ -1,16 +1,12 @@
 <?php
-// Database connection details
-$servername = "localhost"; // Replace with your database server name
-$username = "root"; // Replace with your database username
-$password = ""; // Replace with your database password
-$dbname = "koshe"; // Replace with your database name
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "wmsp";  
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
+$conn = new mysqli($host, $user, $pass, $db);  // ✅ db included
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+// echo "Connected successfully"; // Optional
 ?>

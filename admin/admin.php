@@ -73,92 +73,14 @@ header("Expires: 0");
       </div>
     </nav>
   </header>
+
   <section class="admin_section layout_padding" id="AdminPage">
     <div class="container">
         <div class="heading_container">
             <h2>Admin </h2>
         </div> <br> <br> 
         <div class="row">
-            
-            <!-- Manage User Accounts -->
-            <div class="col-md-6 col-lg-4 mx-auto">
-                <div class="box">
-                    <div class="img-box">
-                       
-                    </div>
-                    <div class="detail-box">
-                        <h5><b>Manage User Accounts</b></h5>
-                        <form id="manageUserForm">
-                            <label for="userID">User ID:</label><br>
-                            <input type="text" id="userID" name="userID" required><br>
-                    
-                            <label for="firstName">First Name:</label><br>
-                            <input type="text" id="firstName" name="firstName" required><br>
-                    
-                            <label for="lastName">Last Name:</label><br>
-                            <input type="text" id="lastName" name="lastName" required><br>
-                    
-                            <label for="email">Email:</label><br>
-                            <input type="email" id="email" name="email" required><br>
-                    
-                            <label for="password">Password:</label><br>
-                            <input type="password" id="password" name="password" required><br>
-                    
-                            <label for="userRole">User Role:</label><br>
-                            <select id="userRole" name="userRole" required>
-                                <option value="citizen">Citizen</option>
-                                <option value="collector">Waste Collector</option>
-                            </select><br><br>
-                            <select id="requestAction" name="requestAction" required>
-                                <option value="">-- Select Action --</option>
-                                <option value="add">Add</option>
-                                <option value="remove">Remove</option>
-                                <option value="updated">Update</option>
-                            </select><br><br>
-                            <div class="btn_box">
-                                <button type="submit">Submit</button>
-                            </div><br>
-                        </form>
-                    </div>
-                </div>
-            </div>
-  <br> <br> <br>
-            <!-- Setup Schedules -->
-            <div class="col-md-6 col-lg-4 mx-auto">
-                <div class="box">
-                    <div class="img-box">
-                       
-                    </div>
-                    <div class="detail-box">
-                        <h5><b>Setup Schedules</b></h5>
-                        <form id="setupScheduleForm">
-                            <label for="scheduleID">Schedule ID:</label> <br>
-                            <input type="text" id="scheduleID" name="scheduleID" required> <br>
-                            
-                            <label for="collectionDay">Collection Day:</label> <br>
-                            <input type="date" id="collectionDay" name="collectionDay" required> <br>
-  
-                            <label for="collectionTime">Collection Time:</label> <br>
-                            <input type="time" id="collectionTime" name="collectionTime" required> <br> <br> 
-                            
-                            <label for="requestAction">Action:</label><br>
 
-                           <select id="requestAction" name="requestAction" required>
-                              <option value="">-- Select Action --</option>
-                              <option value="approved">Approve</option>
-                              <option value="rejected">Reject</option>
-                              <option value="updated">Update</option>
-                          </select><br><br>
-                            <div class="btn_box">
-                                <button type="submit">
-                                    Save Schedule
-                                </button>
-                            </div> <br>
-                        </form>
-                    </div>
-                </div>
-            </div>
-  <br><br> <br>
             <!-- Oversee Requests -->
             <div class="col-md-6 col-lg-4 mx-auto">
                 <div class="box">
@@ -168,7 +90,7 @@ header("Expires: 0");
                     <div class="detail-box">
                         <h5><b>Oversee Requests</b></h5>
                         <form action="view_requests.php" method="GET">
-    <button type="submit">Manage all Requests</button>
+    <button type="submit"  class="btn btn-sm" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);">Manage all Requests</button>
 </form>
 
 
@@ -178,65 +100,106 @@ header("Expires: 0");
                 </div>
             </div>
   <br><br> <br>
-            <!-- Post Recycling Information -->
-            <div class="col-md-6 col-lg-4 mx-auto">
-                <div class="box">
-                    <div class="img-box">
-                     
-                    </div>
-                    <div class="detail-box">
-                        <h5><b>Post Recycling Information</b></h5>
-                        <form id="postRecyclingForm">
-                          
-                          <!-- Step 2: Choose to create or manage -->
-                          <label for="campaignMode">Select Action:</label><br>
-                          <select id="campaignMode" name="campaignMode" required>
-                            <option value="">-- Select Mode --</option>
-                            <option value="create">Create New Campaign</option>
-                            <option value="edit">Manage Existing Campaign</option>
-                          </select><br><br>
-                      
-                          <!-- Step 3: Campaign Details -->
-                          <label for="campaignTitle">Campaign Title:</label><br>
-                          <input type="text" id="campaignTitle" name="campaignTitle" required><br>
-                      
-                          <label for="campaignContent">Campaign Content:</label><br>
-                          <textarea id="campaignContent" name="campaignContent" rows="4" required></textarea><br>
-                      
-                          <label for="targetAudience">Target Audience:</label><br>
-                          <input type="text" id="targetAudience" name="targetAudience" placeholder="e.g. Citizens, Collectors, All"><br>
-                      
-                          <label for="incentives">Incentives:</label><br>
-                          <input type="text" id="incentives" name="incentives" placeholder="e.g. Badges, Discounts"><br><br>
-                      
-                          <!-- Step 4: Submit -->
-                          <div class="btn_box">
-                            <button type="submit">Post Campaign</button>
-                          </div><br>
-                        </form>
-                      </div>
-                      
-                </div>
-            </div>
-  <br><br> <br>
-           
-            <!-- Notify Users -->
+ <!-- Oversee Report -->
             <div class="col-md-6 col-lg-4 mx-auto">
                 <div class="box">
                     <div class="img-box">
                        
                     </div>
                     <div class="detail-box">
+                        <h5><b>Oversee Reports</b></h5>
+                        <form action="view_reports.php" method="GET">
+                            <button type="submit" class="btn btn-sm" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);"> See Reports</button>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+  <br><br> <br>
+<!-- Oversee confirmation requset -->
+
+    <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="box">
+                    <div class="img-box">
+                       
+                    </div>
+                    <div class="detail-box">
+                        <h5><b>payment confirmation requset</b></h5>
+                        <form action="payment_confirmation_requests.php" method="GET">
+                            <button type="submit"  class="btn btn-sm" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);"> See Requset</button>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+  <br><br> <br><br><br>
+  <!-- Oversee colloctor report -->
+
+    <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="box">
+                    <div class="img-box">
+                       
+                    </div>
+                    <div class="detail-box">
+                        <h5><b>Bin Reports</b></h5>
+                        <form action="admin_view_reports.php" method="GET">
+                            <button type="submit"  class="btn btn-sm" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);"> 
+                                See Reports</button>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+  <br><br> <br><br><br>
+<form id="setupScheduleForm" action="save_schedule.php" method="POST">
+    <h5><b>Set up Schedules</b></h5>
+    <label for="schedule">Schedule Name:</label><br>
+    <input type="text" id="schedule" name="schedule" required><br>
+
+       
+
+    <label for="collectionDay">update Day:</label><br>
+    <input type="date" id="collectionDay" name="collectionDay" required><br><br>
+
+       <label for="day_label"> CollectionDays:</label><br>
+       <input type="text" id="day_label" name="day_label" required placeholder="Monday"><br><br>
+
+    <label for="collectionTimeStart">Collection Time starts:</label><br>
+    <input  type="time" id="collectionTimeStart" name="collectionTimeStart" required><br><br>
+
+    <label for="collectionTimeEnd">Collection Time ends:</label><br>
+    <input type="time" id="collectionTimeEnd" name="collectionTimeEnd" required><br><br>
+
+    <div class="btn_box">
+        <button type="submit" class="btn btn-sm" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);">Save Schedule</button>
+    </div>
+</form>
+<br><br>
+
+
+
+    <!-- Notify Users -->
+            <div class="col-md-6 col-lg-4 mx-auto">
+                <div class="box">
+                    <div class="detail-box">
                         <h5><b>Notify Users</b></h5>
-                        <form id="notifyUsersForm">
-                            <label for="notificationTitle">Notification Title:</label> <br>
-                            <input type="text" id="notificationTitle" name="notificationTitle" required> <br>
+                        <form action="send_admin_notification.php" method="POST" id="notifyUsersForm">
+                           
                             
-                            <label for="notificationMessage">Message:</label> <br>
+                          
                             <textarea id="notificationMessage" name="notificationMessage" rows="4" required></textarea><br> <br> 
   
                             <div class="btn_box">
-                                <button type="submit">
+                                <button type="submit"  class="btn btn-sm" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);">
                                     Send Notification
                                 </button>
                             </div> <br>
@@ -244,10 +207,150 @@ header("Expires: 0");
                     </div>
                 </div>
             </div>
+  <br><br><br>
+            
+<!-- Manage User Accounts -->
+<div class="col-md-6 col-lg-4 mx-auto">
+  <div class="box">
+    <div class="detail-box">
+      <h5><b>Manage  Accounts</b></h5>
+     <form id="manageUserForm" method="POST" action="manage_user.php">
   
-        </div>
+  <label for="role">Select User Role:</label><br>
+  <select id="role" name="role" required>
+      <option value="">-- Select Role --</option>
+    <option value="citizen">Citizen</option>
+    <option value="collector">Waste Collector</option>
+  </select><br><br>
+
+
+  <label for="action">Select Action:</label><br>
+  <select id="action" name="action" required>
+    <option value="">-- Select Action --</option>
+    <option value="add">Add</option>
+    <option value="remove">Remove</option>
+    <option value="update">Update</option>
+  </select><br><br>
+
+
+  <!-- Dynamic Fields Here -->
+  <div id="dynamicFields"></div>
+  
+  <div id="removeList"></div>
+</form>
+
     </div>
-</section>
+  </div>
+</div>
+<br><br><br><div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const actionSelect = document.getElementById("action");
+  const roleSelect = document.getElementById("role");
+  const dynamicForm = document.getElementById("dynamicFields");
+
+  function buildForm(selectedAction, selectedRole) {
+    dynamicForm.innerHTML = ""; // Clear previous content
+if (selectedAction === "add") {
+  const selectedRole = roleSelect.value;
+  let showPhone = selectedRole === "citizen";
+
+  dynamicForm.innerHTML = `
+    <label for="first_name">First Name:</label><br>
+    <input type="text" name="first_name" required><br>
+
+    <label for="last_name">Last Name:</label><br>
+    <input type="text" name="last_name" required><br>
+
+    <label for="username">Username:</label><br>
+    <input type="text" name="username" required><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" required><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" required><br>
+
+    <label for="address">Address:</label><br>
+    <input type="text" name="address" required><br>
+
+    ${showPhone ? `
+      <label for="phone">Phone:</label><br>
+      <input type="text" name="phone" required><br>
+    ` : ""}
+
+    <br>
+    <div class="btn_box">
+      <button type="submit" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);">
+        DONE
+      </button>
+    </div>
+  `;
+}
+else if (selectedAction === "remove") {
+      dynamicForm.innerHTML = `
+        <p>To remove users or collector , please click the button below to view the list and delete them from there.</p>
+        <a href="admin_remove_list.php?role=${selectedRole}">
+          <button type="button" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);" >
+          See the list to remove</button>
+        </a>
+      `;
+    }
+    else if (selectedAction === "update") {
+  dynamicForm.innerHTML = `
+    <p>To update users or collectors, please click the button below to view the list and edit them from there.</p>
+    <a href="admin_update_list.php?role=${selectedRole}">
+      <button type="button" style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);">
+      See the list to update</button>
+    </a>
+  `;
+}
+
+
+  }
+
+  // Trigger form build on both action and role change
+  actionSelect.addEventListener("change", () => {
+    buildForm(actionSelect.value, roleSelect.value);
+  });
+
+  roleSelect.addEventListener("change", () => {
+    buildForm(actionSelect.value, roleSelect.value);
+  });
+});
+</script>
+
+  
+<br><br><br>
+
+            <!-- admin_recycling_post.html --><div class="form-container">
+    <form action="post_recycling_info.php" method="POST">
+      <h3>Post Recycling Information</h3>
+
+      <label for="campaignTitle">Information Title:</label><br>
+      <input type="text" id="campaignTitle" name="campaignTitle" required><br><br>
+
+      <label for="campaignContent">Information Content:</label><br>
+      <textarea id="campaignContent" name="campaignContent" rows="4" required></textarea><br><br>
+
+      <label for="targetAudience">Target Audience:</label><br>
+      <select id="targetAudience" name="targetAudience" required>
+        <option value="">-- Select Audience --</option>
+        <option value="Citizens">Citizens</option>
+        <option value="Collectors">Collectors</option>
+        <option value="All">All</option>
+      </select><br><br>
+
+      <button type="submit"  style="background: linear-gradient(to right, #cceeff, #e6f7ff); color: #004466; border: 1px solid #b3e0ff; border-radius: 8px; padding: 6px 14px; font-weight: bold; box-shadow: 0 2px 5px rgba(0, 102, 153, 0.15);">
+        Post Information</button>
+    </form>
+  </div>
+
+  <br><br>
+
+
 </body>
 <script>
   window.onpageshow = function(event) {
